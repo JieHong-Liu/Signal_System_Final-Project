@@ -46,13 +46,13 @@ ax4.set_ylim(250, 1000)
 # plot parameters
 print('plotting data...')
 # open serial port
-strPort = 'com3'  # for my pc
+strPort = 'com4'  # for my pc
 # strPort = '/dev/cu.usbmodem143101'  # for mac
 
 ser = serial.Serial(strPort, 115200)
 ser.flush()
 
-start = time.time()
+start = time.time() 
 now_time = time.time()
 avg_list = []
 avg_avg_list = []
@@ -99,12 +99,12 @@ while True:  # delete the noise
         fig.canvas.flush_events()
 
         # print("PData3.axis_y is :", PData3.axis_yac)
-        for i in range(6, 493, 1):  # find for the maximum
+        for i in range(8, 491, 1):  # find for the maximum
             if(PData3.axis_yac[i] > PData3.axis_yac[i-1] and PData3.axis_yac[i] > PData3.axis_yac[i-2] and PData3.axis_yac[i] > PData3.axis_yac[i+2] and PData3.axis_yac[i] > PData3.axis_yac[i+1]):
                 if(PData3.axis_yac[i] > PData3.axis_yac[i-3] and PData3.axis_yac[i] > PData3.axis_yac[i-4] and PData3.axis_yac[i] > PData3.axis_yac[i+3] and PData3.axis_yac[i] > PData3.axis_yac[i+4]):
                     if(PData3.axis_yac[i] > PData3.axis_yac[i-5] and PData3.axis_yac[i] > PData3.axis_yac[i+5] and PData3.axis_yac[i] > PData3.axis_yac[i-6] and PData3.axis_yac[i] > PData3.axis_yac[i+6]):
-                        # if(PData3.axis_yac[i] > PData3.axis_yac[i-7] and PData3.axis_yac[i] > PData3.axis_yac[i+7]):
-                        beats = beats + 1
+                        if(PData3.axis_yac[i] > PData3.axis_yac[i-7] and PData3.axis_yac[i] > PData3.axis_yac[i+7] and PData3.axis_yac[i] > PData3.axis_yac[i-8] and PData3.axis_yac[i] > PData3.axis_yac[i+8]):
+                            beats = beats + 1
         if(first_beat == 1):
             catch_time = time.time() - now_time
             first_beat = 0
