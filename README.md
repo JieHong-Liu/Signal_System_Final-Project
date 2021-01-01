@@ -1,7 +1,7 @@
 # 台科大信號與系統實習期末專題
 GitHub網址:
 
-https://github.com/JieHong-Liu/Signal_System-Project
+https://github.com/JieHong-Liu/Signal_System_Final-Project
 
 影片網址:
 
